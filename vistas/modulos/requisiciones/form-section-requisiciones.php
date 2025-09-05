@@ -80,7 +80,15 @@
 						</select>
 
 					</div>
+				</div>
 
+				<div class="col-12 mb-2 ">
+					<a id="toggleBtn" class="text-info" style="cursor:pointer;">
+						Datos Generales <i id="toggleIcon" class="fas fa-chevron-down ml-1 pt-1"></i>
+					</a>
+				</div>
+
+				<div id="contenedorCampos"  class="row d-none">
 					<div class="col-md-6 form-group">
 						<label for="fechaRequerida">Fecha de Requisición:</label>						
 						<div class="input-group date" id="fechaRequerida" data-target-input="nearest">
@@ -131,6 +139,9 @@
 						<label for="especificaciones">Especificaciones:</label>
 						<input type="text" id="especificaciones" name="especificaciones" value="<?= $especificaciones ?>" class="form-control form-control-sm text-uppercase" placeholder="Ingresa las especificaciones">
 					</div>
+				</div>
+
+				<div class="row">
 
 					<div class="col-md-6 form-group">
 						<label for="categoriaOrden">Categoría de Orden de Compra:</label>
