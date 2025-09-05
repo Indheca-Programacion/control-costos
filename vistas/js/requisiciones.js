@@ -2288,4 +2288,21 @@ $(function () {
     });
   });
 
+  // BOTON VER MAS REQUISICIONES
+    const toggleBtn = document.getElementById('toggleBtn');
+    const contenedor = document.getElementById('contenedorCampos');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    toggleBtn.addEventListener('click', () => {
+        contenedor.classList.toggle('d-none');
+
+        // Cambiar icono
+        if(contenedor.classList.contains('d-none')) {
+            toggleIcon.classList.remove('fa-chevron-up');
+            toggleIcon.classList.add('fa-chevron-down');
+        } else {
+            toggleIcon.classList.remove('fa-chevron-down');
+            toggleIcon.classList.add('fa-chevron-up');
+        }
+    });
 });
