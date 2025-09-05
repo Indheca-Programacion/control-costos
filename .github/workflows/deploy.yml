@@ -18,14 +18,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "Conexión exitosa al servidor"
-            echo "chido"
 
+            cd ${{ secrets.WORK_DIR }}
+            echo "📥 Actualizando repositorio..."
+            git fetch origin ${{ secrets.MAIN_BRANCH }}
+            git checkout ${{ secrets.MAIN_BRANCH }}
+            git pull origin ${{ secrets.MAIN_BRANCH }}
 
-            # cd ${{ secrets.WORK_DIR }}
-            # echo "📥 Actualizando repositorio..."
-            # git fetch indheca-remote ${{ secrets.MAIN_BRANCH }}
-            # git checkout ${{ secrets.MAIN_BRANCH }}
-            # git pull indheca-remote ${{ secrets.MAIN_BRANCH }}
-
-            # echo "✅ Despliegue completado en $HOSTNAME"
+            echo "✅ Despliegue completado en $HOSTNAME"
 
