@@ -3,7 +3,7 @@ name: CI/CD PHP Deploy VP
 on:
   push:
     branches:
-      - prueba
+      - master
 
 jobs:
   ssh-test:
@@ -20,10 +20,10 @@ jobs:
             echo "Conexión exitosa al servidor"
 
             cd ${{ secrets.WORK_DIR }}
-            echo "📥 Actualizando repositorio..."
-            git fetch indheca-remote ${{ secrets.MAIN_BRANCH }}
-            git checkout ${{ secrets.MAIN_BRANCH }}
-            git pull indheca-remote ${{ secrets.MAIN_BRANCH }}
+            # echo "📥 Actualizando repositorio..."
+            # git fetch indheca-remote ${{ secrets.MAIN_BRANCH }}
+            # git checkout ${{ secrets.MAIN_BRANCH }}
+            # git pull indheca-remote ${{ secrets.MAIN_BRANCH }}
 
-            echo "✅ Despliegue completado en $HOSTNAME"
+            # echo "✅ Despliegue completado en $HOSTNAME"
 
