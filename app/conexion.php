@@ -7,9 +7,11 @@ use PDO;
 class Conexion
 {
 
+
 	static public function conectar(){
 
-        $link = new PDO("mysql:host=localhost;dbname=".CONST_BD_SECURITY,
+        $link = new PDO("mysql:host=".CONST_BD_SERVER.";
+                            dbname=".CONST_BD_SECURITY,
                             CONST_BD_USER,
                             CONST_BD_PASSWORD);
 
@@ -21,7 +23,8 @@ class Conexion
 
 	static public function conectarBD($BD){
 
-        $link = new PDO("mysql:host=localhost;dbname=".$BD,
+        $link = new PDO("mysql:host=".CONST_BD_SERVER.";
+                            dbname=".$BD,
                             CONST_BD_USER,
                             CONST_BD_PASSWORD);
 

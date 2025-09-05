@@ -1,0 +1,29 @@
+name: CI/CD PHP Deploy VP
+
+on:
+  push:
+    branches:
+      - prueba
+
+jobs:
+  ssh-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Executing remote SSH commands for PHP Docker app
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "Conexión exitosa al servidor"
+
+            cd ${{ secrets.WORK_DIR }}
+            echo "📥 Actualizando repositorio..."
+            git fetch indheca-remote ${{ secrets.MAIN_BRANCH }}
+            git checkout ${{ secrets.MAIN_BRANCH }}
+            git pull indheca-remote ${{ secrets.MAIN_BRANCH }}
+
+            echo "✅ Despliegue completado en $HOSTNAME"
+

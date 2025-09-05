@@ -1195,7 +1195,7 @@ class RequisiconAjax
                     $mensaje->consultar(null , $mensaje->id);
                     $mensaje->mensajeHTML = $mensajeHTML;
 
-                    $enviar = MailController::sendProveedor($mensaje,false,$correo);
+                   $enviar = MailController::sendProveedor($mensaje, $correo, false);
                     if ( $enviar["error"] ) $mensaje->noEnviado([ "error" => $enviar["errorMessage"] ]);
                     else $mensaje->enviado();
                 }

@@ -121,7 +121,7 @@ class MailController
 	/*=============================================
     ENVIAR CORREO ELECTRONICO PROVEEDOR
     =============================================*/
-	static public function sendProveedor(Mensaje $mensaje, $debug = false,$correo) :array
+	static public function sendProveedor(Mensaje $mensaje, string $correo, bool $debug = false) : array
     {
     	$configuracionCorreoElectronico = New ConfiguracionCorreoElectronico;
 
