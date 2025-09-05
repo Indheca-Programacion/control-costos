@@ -500,7 +500,7 @@
 </div>
 
 <?php
-	array_push($arrayArchivosJS, 'vistas/js/requisiciones.js?v=2.7');
+	array_push($arrayArchivosJS, 'vistas/js/requisiciones.js?v=2.8');
 	array_push($arrayArchivosJS, 'vistas/js/mensaje-requisicion.js?v=2.4');
 ?>
 
