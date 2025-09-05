@@ -1,0 +1,29 @@
+# Ignorar archivos sueltos
+index.php
+app/globales.php
+php_error_log
+
+# Ignorar carpetas completas
+vistas/img/
+vistas/uploaded-files/
+tmp/
+reportes/requisiciones/
+reportes/orden-compra/
+
+# Ignorar dependencias de Composer
+vendor/
+
+# Permitir index.php dentro de módulos
+!vistas/modulos/**/index.php
+
+# Ignorar configuraciones y archivos relacionados a contenedores
+.htaccess
+Dockerfile
+docker-compose.yml
+init.sql
+
+control-costos
+control-mantenimiento
+roal
+pagina-mantenimiento
+canteras

@@ -1,0 +1,8 @@
+/*Color de Fondo en la página Login*/
+.login-page {
+	background-color: #001f3f;
+}
+
+.form-control {
+	border-radius: 0;
+}

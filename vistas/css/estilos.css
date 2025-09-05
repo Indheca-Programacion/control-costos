@@ -1,0 +1,228 @@
+/*Ajustar el tamaño de letra en el titulo de la pantalla (módulo)*/
+/*.content-header small {
+	font-size: 1rem;
+	font-weight: lighter;
+}*/
+
+/* Mostrar el icono ( Dashboard ) en dispositivos pequeños */
+.small-box .icon {
+	display: unset!important;
+}
+
+.form-control {
+	border-radius: 0;
+}
+
+input.campoObligatorio:focus {
+	/*border-color: #ff8800;*/
+}
+
+select.campoObligatorio:focus {
+	/*border-color: #ff8800;*/
+}
+
+.has-feedback .input-group {
+	/*width: 100%;*/
+}
+
+.form-group .input-group {
+	/*width: 100%;*/
+}
+
+.form-group .select2 {
+	/*width: 100%!important;*/
+}
+
+.form-group .select2Add {
+	/*width: 100%!important;*/
+}
+
+.sectionBienes {
+	/*margin-top: 0.5rem;*/
+}
+
+.sectionBienes .tab-content {
+	/*margin-top: 1.5rem;*/
+}
+
+/*Cambiar letra a mayuscula en el elemento Select2*/
+.select2-search__field, .select2-selection__rendered, .select2-results__option {
+    text-transform: uppercase;
+}
+
+/*Quitar el borde redondo en el elemento Select2*/
+.select2-selection.select2-selection--single {
+    border-radius: 0;
+}
+.select2-search--dropdown .select2-search__field {
+	border-radius: 0;
+}
+
+/*Arregla cuando el texto es demasiado largo*/
+.select2Add + .select2-container--default .select2-selection--single {
+	/*overflow: hidden;*/
+}
+
+.select2Add + .select2-container .select2-selection--single .select2-selection__rendered {
+	/*white-space: pre-wrap;*/
+	/*white-space: normal;*/ /*Esta activado*/
+	/*white-space: nowrap;*/
+	/*text-overflow: clip;*/
+	/*text-overflow: ellipsis;*/
+	/*overflow: hidden;*/
+}
+
+/*Ajusta el botor agregar (ubicado al lado derecho del select2)*/
+span.select2 + .input-group-addon {
+	/*border: none;
+	padding: 0px 0px 0px 2px;
+	margin: 0;*/
+}
+
+span.select2 + .input-group-addon button {
+/*	padding: 1px 6px;
+	font-size: 2rem;	*/
+}
+
+/*Para visualizar cuando el elemento select2 tiene el foco*/
+.select2 + .select2-container :focus, .select2Add + .select2-container :focus{
+/*	transition-duration: 0.5s;
+	border: 1px solid #5E9ED6;*/
+}
+
+/*Ajustar el ancho de select2 cuando está dentro de un input-group*/
+.input-group > .select2-container {
+    width: auto !important;
+    flex: 1 1 auto !important;
+}
+
+/*Ajusta el checkbox*/
+.form-check input.form-check-input, td input.form-check-input {
+/*	width: 1.4125rem;
+	height: 1.4125rem;*/
+}
+
+/*Ajusta el checkbox*/
+.input-group-append .input-group-text{
+	background-color: #fff;
+	border-radius: 0;
+	/*padding: 0.25rem 0.75rem;*/
+	padding: 0.25rem 0.625rem;
+}
+/*.input-group-text input[type='checkbox'], .form-check input[type='checkbox'] {*/
+.input-group-text input[type='checkbox'], .form-check input.form-check-input, td input[type='checkbox'] {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+/*Ajusta margin y padding en un checkbox (Perfiles y Permisos)*/
+.form-check {
+	display: flex; 
+	align-items: center;
+}
+.form-check input[type='checkbox'] {
+	margin-top: 0;
+}
+.form-check label {
+	padding-left: 0.25rem;
+}
+td input[type='checkbox'] {
+	margin-top: 0.25rem;
+}
+
+.input-group.perfiles span {
+	/*padding-top: 2px;*/
+}
+
+/*Estilo para las tablas dinámicas*/
+.tabla-dinamica table {
+	/*font-family: 'Source Sans Pro', sans-serif;*/
+}
+.tabla-dinamica table th, .tabla-dinamica table td {	
+	/*border: 1px solid #999!important;*/
+}
+.tabla-dinamica table th {
+	/*font-weight: 700;
+	font-size: 1.8rem;*/
+}
+.tabla-dinamica table td {
+/*	font-weight: 600;
+	font-size: 1.6rem;*/
+}
+table.dataTable.dtr-inline.collapsed.table-sm>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed.table-sm>tbody>tr>th:first-child:before {
+	top: 50%;	
+}
+
+/*Estilos personalizados para el Módulo Servicios Opción Requisiciones*/
+section.requisiciones .btn-group a {
+	font-weight: bold;
+}
+
+section.requisiciones .btn-group a:hover {
+	background-color: #17a2b8;
+}
+
+section.requisiciones .btn-group a.disabled-link {
+	pointer-events: none;
+	font-weight: normal;
+	font-style: italic;
+}
+
+/*Estilos personalizados para el Módulo Costos Opción Resumen*/
+section .tab-content #tablaInsumos_wrapper tbody tr.dtrg-group.dtrg-start td,
+section .tab-content #tablaIndirectos_wrapper tbody tr.dtrg-group.dtrg-start td {
+	/*color: white;*/
+	/*background-color: #1969FF;*/
+	background-color: #FFFFFF;
+}
+
+section .tab-content #tablaInsumos_wrapper tbody tr.dtrg-group.dtrg-end td,
+section .tab-content #tablaIndirectos_wrapper tbody tr.dtrg-group.dtrg-end td {
+	/*color: white;*/
+	/*background-color: #0E46AE;*/
+	background-color: #FFFFFF;
+}
+
+section table tbody tr.seleccionable:hover {
+	cursor: pointer;
+	background-color: #0040BA;
+	color: white;
+}
+
+input[type="radio"] {
+	display: none;
+  }
+  
+  .ratio {
+	color: grey;
+  }
+  
+  .clasificacion {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+  }
+  
+  .ratio:hover,
+  .ratio:hover ~ .ratio {
+	color: orange;
+  }
+  
+  input[type="radio"]:checked ~ .ratio {
+	color: orange;
+  }
+
+	td.details-control {
+	text-align:center;
+	color:grey;
+	cursor: pointer;
+	}
+
+	.dropzone {
+		background: white;
+		border-radius: 5px;
+		border: 2px dashed rgb(0, 135, 247);
+		border-image: none;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
