@@ -23,7 +23,7 @@ jobs:
             echo "📥 Actualizando repositorio..."
             git fetch origin ${{ secrets.MAIN_BRANCH }}
             git checkout ${{ secrets.MAIN_BRANCH }}
-            git pull origin ${{ secrets.MAIN_BRANCH }}
+            # git pull origin ${{ secrets.MAIN_BRANCH }}
 
             echo "✅ Despliegue completado en $HOSTNAME"
 
