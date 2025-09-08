@@ -33,8 +33,8 @@
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-list-ol"></i> 
-                Listado de Puestos
-              </h3>
+                Listado de Puestos PRUEBA
+              </h3> 
               <div class="card-tools">
                 <a href="<?=Route::names('puestos.create')?>" class="btn btn-outline-primary">
                   <i class="fas fa-plus"></i> Crear puesto
