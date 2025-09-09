@@ -714,6 +714,14 @@ class RequisiconAjax
                     array_push($arrayDestinatarios, $destinatario);
                 }
 
+                if (isset($requisicion->categoriaId) && $requisicion->categoriaId == 14) {
+                    $destinatario = [
+                        "usuarioId" => 83, // ID de usuario de Jorge Gallegos
+                        "correo" => "contratos@indheca.com"
+                    ];
+                    array_push($arrayDestinatarios, $destinatario);
+                }
+
                 $mensaje = New Mensaje;
 
                 $folio = mb_strtoupper($requisicion->folio);
