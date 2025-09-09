@@ -145,6 +145,24 @@ class Obra extends ObraPolicy
         }
     }
 
+    public function consultarObraActivas(){
+        return Conexion::queryAll($this->bdName, "SELECT 
+                                                    O.*, 
+                                                    E.nombreCorto AS 'empresas.nombreCorto', 
+                                                    ES.descripcion AS 'estatus.descripcion', 
+                                                    ES.colorTexto AS 'estatus.colorTexto', 
+                                                    ES.colorFondo AS 'estatus.colorFondo', 
+                                                    US.nombre AS 'usuarios.nombre', 
+                                                    US.apellidoPaterno AS 'usuarios.apellidoPaterno', 
+                                                    US.apellidoMaterno AS 'usuarios.apellidoMaterno' 
+                                                FROM $this->tableName O 
+                                                INNER JOIN empresas E ON O.empresaId = E.id 
+                                                INNER JOIN estatus ES ON O.estatusId = ES.id 
+                                                INNER JOIN usuarios US ON O.usuarioIdCreacion = US.id
+                                                WHERE O.estatusId = 1
+                                                ORDER BY E.id, O.descripcion", $error);
+    }
+
     public function crear($datos)
     {
         // Agregar al request para especificar el usuario que creó la Requisición

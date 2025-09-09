@@ -33,7 +33,7 @@ class ObraAjax
 	public function mostrarTabla()
 	{
 		$obra = New Obra;
-        $obras = $obra->consultar();
+        $obras = $obra->consultarObraActivas();
 
 		$columnas = array();
         array_push($columnas, [ "data" => "consecutivo" ]);

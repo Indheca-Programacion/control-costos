@@ -46,7 +46,7 @@ class RequisicionesController
         require_once "app/Models/Obra.php";
         $obra = New \App\Models\Obra;
         if ( $usuario->empresaId == 4 ) $obras = [["descripcion" => "371.Proyecto Viviendas -Edificación", "id" => 109]];
-        else $obras = $obra->consultar();
+        else $obras = $obra->consultarObraActivas();
 
         require_once "app/Models/Proveedor.php";
         $proveedor = New \App\Models\Proveedor;
