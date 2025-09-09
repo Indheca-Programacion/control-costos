@@ -73,7 +73,7 @@ class RequisicionesController
         require_once "app/Models/Obra.php";
         $obra = New \App\Models\Obra;
         if ( $usuario->empresaId == 4 ) $obras = [["descripcion" => "371.Proyecto Viviendas -Edificación", "id" => 109]];
-        else $obras = $obra->consultar();
+        else $obras = $obra->consultarObraActivas();
 
         require_once "app/Models/Divisa.php";
         $divisa = New \App\Models\Divisa;
@@ -131,7 +131,7 @@ class RequisicionesController
                 require_once "app/Models/Obra.php";
                 $obras = New \App\Models\Obra;
                 $obra = $obras->consultar(null,$requisicion->idObra);
-                $listadoObras = $obras->consultar();
+                $listadoObras = $obras->consultarObraActivas();
                 $presupuestos = $obras->consultarLotes();
 
                 require_once "app/Models/ObraDetalles.php";

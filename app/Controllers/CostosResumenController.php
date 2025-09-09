@@ -64,7 +64,7 @@ class CostosResumenController
 
         require_once "app/Models/Obra.php";
         $obra = New \App\Models\Obra;
-        $obras = $obra->consultar();
+        $obras = $obra->consultarObraActivas();
 
         require_once "app/Models/CategoriaOrdenes.php";
         $categoriaOrdenes = New \App\Models\CategoriaOrdenes;
