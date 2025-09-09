@@ -765,6 +765,7 @@ class Requisicion extends RequisicionPolicy
         if ( $respuesta ){
             $this->id = $requisicionId;
             $this->folio = $datos["folio"];
+            $this->categoriaId = $datos["categoriaId"];
 
             if ( isset($datos['cotizacionArchivos']) && $datos['cotizacionArchivos']['name'][0] != '' ) $respuesta = $this->insertarArchivos($datos['cotizacionArchivos'], 4, '../../');
         }
