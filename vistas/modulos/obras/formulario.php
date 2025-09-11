@@ -11,7 +11,7 @@
 		$compradores = isset($old["usuariosCompras"]) ? $old["usuariosCompras"] :$obra->usuariosCompras;
 		$prefijo = isset($old["prefijo"]) ? $old["prefijo"] : $obra->prefijo;
 		// $ubicacionId = isset($old["ubicacionId"]) ? $old["ubicacionId"] : $obra->ubicacionId;
-		$almacen = isset($old["almacen"]) ? $old["almacen"] : $obra->almacen;
+		$almacenId = isset($old["almacen"]) ? $old["almacen"] : $obra->almacen;
 
 	} else {
 		$empresaId = isset($old["empresaId"]) ? $old["empresaId"] : "";
@@ -24,7 +24,7 @@
 		$compradores = isset($old["usuariosCompras"]) ? $old["usuariosCompras"] : array();
 		$prefijo = isset($old["prefijo"]) ? $old["prefijo"] : "";
 		// $ubicacionId = isset($old["ubicacionId"]) ? $old["ubicacionId"] : "";
-		$almacen = isset($old["almacen"]) ? $old["almacen"] : "";
+		$almacenId = isset($old["almacen"]) ? $old["almacen"] : "";
 
 	}
 ?>
@@ -151,9 +151,17 @@
 		</div>
 	<?php endif ?>
 
+	<!-- Almacen -->
 	<div class="col-md-6 form-group">
 		<label for="almacen">Almacen:</label>
-		<input type="text" id="almacen" name="almacen" value="<?php echo fString($almacen); ?>" class="form-control form-control-sm text-uppercase camponSinDecimal" placeholder="Ingresa el almacen">
+		<select <?php if(isset($inventario->id)) echo 'disabled' ?> name="almacen" id="almacen" class="custom-select form-controls select2">
+			<option value="">Seleccione una almacen</option>
+			<?php foreach($almacenes as $almacen) { ?>
+			<option value="<?php echo $almacen["id"]; ?>"
+			<?php echo $almacenId == $almacen["id"] ? ' selected' : ''; ?>
+			><?php echo mb_strtoupper(fString($almacen["nombreCorto"])); ?>
+			</option>
+			<?php } ?>
+		</select>
 	</div>
-
 </div>

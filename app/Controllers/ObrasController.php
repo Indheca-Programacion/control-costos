@@ -56,6 +56,10 @@ class ObrasController
         $usuario = New \App\Models\Usuario;
         $usuarios = $usuario->consultarCompradores();
 
+        require_once "app/Models/Almacen.php";
+        $almacen = New \App\Models\Almacen;
+        $almacenes = $almacen->consultar();
+        
         $formularioEditable = true;
         $contenido = array('modulo' => 'vistas/modulos/obras/crear.php');
 
@@ -156,6 +160,10 @@ class ObrasController
             require_once "app/Models/Usuario.php";
             $usuario = New \App\Models\Usuario;
             $usuarios = $usuario->consultarCompradores();
+            
+            require_once "app/Models/Almacen.php";
+            $almacen = New \App\Models\Almacen;
+            $almacenes = $almacen->consultar();
             
             $formularioEditable = false;
             if ( $obra->estatus["obraAbierta"] ) $formularioEditable = true;
