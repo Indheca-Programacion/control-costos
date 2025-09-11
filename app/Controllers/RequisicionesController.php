@@ -207,8 +207,12 @@ class RequisicionesController
                                 
                                 if ( !in_array($nuevoEstatus, $servicioStatus) && $configuracionRequisicion->checkFlujo($requisicion->estatus["descripcion"], $nuevoEstatus["descripcion"]) ) {
     
-                                    if( mb_strtolower($nuevoEstatus["descripcion"])=='autorizado' && ($obras->almacen == 371) && ( usuarioAutenticado()["id"] != 88 || usuarioAutenticado()["id"] != 111) )  continue; // Condición para que no aparezca el estatus Autorizado en el combo, si ya existe una autorización adicional
-
+                                    if (
+                                        mb_strtolower($nuevoEstatus["descripcion"]) == 'autorizado' &&
+                                        $obras->almacen == 371 &&
+                                        !in_array(usuarioAutenticado()["id"], [88, 111])
+                                    ) continue; // Condición para que no aparezca el estatus Autorizado en el combo, si ya existe una autorización adicional
+                                        
                                     if ( $configuracionRequisicion->checkPerfil($value2["perfiles.nombre"], $nuevoEstatus["descripcion"], "automatico") ) {
                                         $servicioStatus = array();
                                         array_push($servicioStatus, $nuevoEstatus);
